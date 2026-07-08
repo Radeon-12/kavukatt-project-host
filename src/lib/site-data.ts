@@ -98,11 +98,9 @@ export const biographyParagraphs = [
   "He passed away on 9 October 1969. In recognition of his holy life and service, he was declared Servant of God on 25 September 1994, and his cause for canonization had been initiated earlier in 1991.",
 ];
 
-export const logoImg =
-  "https://marmathewkavukatt.org/uploads/mar-mathew-kavukatt-church-logo.jpg";
+export const logoImg = "/images/church-logo.webp";
 
-export const portraitImg =
-  "https://marmathewkavukatt.org/uploads/mar-mathew-kavukatt-first-archbishop-changanacherry.png";
+export const portraitImg = "/images/mar-mathew-kavukatt-full-portrait.png";
 
 /** Full Life & Legacy shrine — portrait, window, flowers & plaque */
 export const legacyShrineImg = "/images/legacy-shrine-full.png";
@@ -117,14 +115,12 @@ export const legacyPortraitImg = "/images/mar-mathew-kavukatt-full-portrait.png"
 export const legacyMemorialShrineImg = "/images/legacy-memorial-shrine-warm.png";
 
 /** Warm cathedral interior for Life & Legacy hero background */
-export const legacyInteriorBg =
-  "https://marmathewkavukatt.org/uploads/1780738859782-007a-0ead95e7.webp";
+export const legacyInteriorBg = "/images/hero-church-painting.png";
 
 export const churchImg =
   "https://res.cloudinary.com/dfftcmdxw/image/upload/f_auto,dpr_auto,q_70,c_limit,w_3840,fl_progressive/v1778604312/kavukattu/images/1778604277072-church-a7a861b1.png";
 
-export const altarImg =
-  "https://marmathewkavukatt.org/uploads/life%20journey/mar-mathew-kavukatt-first-archbishop-changanacherry-1956.png";
+export const altarImg = "/images/mar-mathew-kavukatt-full-portrait.png";
 
 export const gallerySectionContent = {
   intro:
@@ -144,10 +140,10 @@ export const galleryAlbums = [
     sourceUrl:
       "https://marmathewkavukatt.org/gallery/cmq26lo8u00009mmo7jw9iuhe",
     photos: [
-      "uploads/1780740587284-001-Edited-1-158c144e.webp",
-      "uploads/1780740583942-OBCN3698-1-9d093090.webp",
-      "uploads/1780740584570-Father-6965b160.webp",
-      "uploads/1780740585590-Mother-a7878d70.webp",
+      "/images/gallery/family/01-house.webp",
+      "/images/gallery/family/02-room.webp",
+      "/images/gallery/family/03-father.webp",
+      "/images/gallery/family/04-mother.webp",
       "/images/gallery/family/family-group-enhanced.webp",
       "/images/gallery/family/as-bishop-enhanced.webp",
     ].map(galleryUpload),
@@ -159,11 +155,11 @@ export const galleryAlbums = [
     sourceUrl:
       "https://marmathewkavukatt.org/gallery/cmq25xv9d00009m7ol2xl1l6r",
     photos: [
-      "uploads/1780738906796-004-be544087.webp",
-      "uploads/1780738905303-TMP12-5f369b63.webp",
+      "/images/gallery/methrabhishekam/01-deepika-newspaper.webp",
+      "/images/gallery/methrabhishekam/02-consecration-ceremony.webp",
       "/images/gallery/methrabhishekam/laying-on-hands-enhanced.webp",
-      "uploads/1780738905411-007a-344e9467.webp",
-      "uploads/1780738904951-TMP14-b6e03dfe.webp",
+      "/images/gallery/methrabhishekam/04-two-bishops-seated.webp",
+      "/images/gallery/methrabhishekam/05-pope-meeting.webp",
     ].map(galleryUpload),
     icon: "church" as const,
   },
@@ -220,7 +216,7 @@ export function getGalleryAlbum(id: string) {
 }
 
 export function getGalleryCoverImage(album: GalleryAlbum) {
-  return album.photos[0];
+  return album.photos.find((photo) => photo.startsWith("/")) ?? album.photos[0];
 }
 
 export const videoSectionContent = {

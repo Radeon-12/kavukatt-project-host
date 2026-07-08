@@ -13,6 +13,7 @@ import {
 import {
   galleryAlbums,
   gallerySectionContent,
+  getGalleryCoverImage,
 } from "@/lib/site-data";
 import { HERO_CHURCH_BG } from "@/lib/hero-collage";
 import { heroChurchTheme, lifeLegacySectionBackground } from "@/lib/hero-theme";
@@ -41,13 +42,9 @@ function AlbumIconBadge({ icon }: { icon: AlbumIcon }) {
   }
 }
 
-function GalleryAlbumCard({
-  id,
-  title,
-  photos,
-  icon,
-}: (typeof galleryAlbums)[number]) {
-  const coverImage = photos[0];
+function GalleryAlbumCard(album: (typeof galleryAlbums)[number]) {
+  const { id, title, icon } = album;
+  const coverImage = getGalleryCoverImage(album);
   return (
     <Link
       href={`/gallery/${id}`}
